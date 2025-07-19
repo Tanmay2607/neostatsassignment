@@ -1,25 +1,25 @@
-# --- 1. Imports ---
+# Imports
 import streamlit as st
 import pandas as pd
 import matplotlib.pyplot as plt
 import google.generativeai as genai
 import re
 
-# --- 2. Helper: Extract code from LLM ---
+# Helper: Extract code from LLM 
 def extract_python_code(response_text):
     match = re.search(r"```(?:python)?(.*?)```", response_text, re.DOTALL)
     if match:
         return match.group(1).strip()
     return response_text.strip()
 
-# --- 3. Gemini LLM call ---
+# Gemini LLM call 
 def call_llm_with_gemini(prompt, api_key):
     genai.configure(api_key=api_key)
     model = genai.GenerativeModel(model_name="gemini-1.5-flash-latest")
     response = model.generate_content(prompt)
     return response.text.strip() if response.text else "❌ No response received."
 
-# --- 4. Schema + Normalization ---
+# Schema + Normalization
 def normalize_column_names(df):
     return df.rename(columns=lambda col: ''.join(e for e in col.strip().lower().replace(' ', '_') if e.isalnum() or e == '_'))
 
