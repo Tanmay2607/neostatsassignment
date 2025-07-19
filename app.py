@@ -15,7 +15,7 @@ def extract_python_code(response_text):
 # --- 3. Gemini LLM call ---
 def call_llm_with_gemini(prompt, api_key):
     genai.configure(api_key=api_key)
-    model = genai.GenerativeModel("gemini-1.5-pro")
+    model = genai.GenerativeModel(model_name="gemini-1.5-flash-latest")
     response = model.generate_content(prompt)
     return response.text.strip() if response.text else "❌ No response received."
 
