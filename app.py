@@ -96,7 +96,7 @@ def execute_generated_code(code, df):
         return f"❌ Error executing code: {e}"
 
 # --- 5. Streamlit App ---
-st.set_page_config(page_title="NeoAT Excel Assistant", layout="centered")
+st.set_page_config(page_title="Neostats Excel Assistant", layout="centered")
 st.title("Tanmay's Excel Sheet Analyzer")
 
 api_key = st.secrets["gemini_api_key"]
