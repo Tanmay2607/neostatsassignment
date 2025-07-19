@@ -71,7 +71,7 @@ def execute_generated_code(code, df):
                 return result
             else:
                 st.dataframe(result.head(50))
-                return f"✅ Output truncated: Showing first 50 of {result.shape[0]} rows."
+                return f"Output truncated: Showing first 50 of {result.shape[0]} rows."
 
         # If result is a Series
         if isinstance(result, pd.Series):
@@ -82,47 +82,47 @@ def execute_generated_code(code, df):
                 return result_df
             else:
                 st.dataframe(result_df.head(50))
-                return f"✅ Output truncated: Showing first 50 of {result_df.shape[0]} rows."
+                return f"Output truncated: Showing first 50 of {result_df.shape[0]} rows."
 
         # If result is a scalar (int, float, bool, string)
         if isinstance(result, (int, float, bool, str)):
             return str(result)
 
-        return "✅ Code executed successfully. (No specific output returned.)"
+        return "Code executed successfully. (No specific output returned.)"
 
     except Exception as e:
-        st.error("❌ Error executing generated code.")
+        st.error("Error executing generated code.")
         st.exception(e)
-        return f"❌ Error executing code: {e}"
+        return f"Error executing code: {e}"
 
 # --- 5. Streamlit App ---
 st.set_page_config(page_title="Neostats Excel Assistant", layout="centered")
 st.title("Tanmay's Excel Sheet Analyzer")
 
 api_key = st.secrets["gemini_api_key"]
-uploaded_file = st.file_uploader("📁 Upload your Excel file", type=["xlsx"])
-query = st.text_input("❓ Ask a question about your data")
+uploaded_file = st.file_uploader("Upload your Excel file", type=["xlsx"])
+query = st.text_input("Ask a question about your excel sheet")
 
 if uploaded_file and api_key and query:
     try:
         df = pd.read_excel(uploaded_file, engine="openpyxl")
         df = normalize_column_names(df)
         df = normalize_string_values(df)
-        st.subheader("🔍 Data Preview")
+        st.subheader("Data Preview")
         st.dataframe(df.head())
 
         schema = get_data_schema(df)
         prompt = generate_llm_prompt(query, schema)
-        with st.spinner("🤖 Thinking..."):
+        with st.spinner("Thinking....."):
             response = call_llm_with_gemini(prompt, api_key)
             code = extract_python_code(response)
             result = execute_generated_code(code, df)
 
-        st.subheader("💡 Answer / Chart")
+        st.subheader("Answer / Chart")
         if isinstance(result, (pd.Series, pd.DataFrame)):
             st.write(result)
         elif result is not None:
             st.write(result)
 
     except Exception as e:
-        st.error(f"❌ Failed to process: {e}")
+        st.error(f"Failed to process: {e}")
