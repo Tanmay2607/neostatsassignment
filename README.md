@@ -50,4 +50,9 @@ Displays result back in Streamlit
 
 ## 🖼 Sample
 <img width="1366" height="768" alt="Screenshot (253)" src="https://github.com/user-attachments/assets/d9baf212-0469-45b1-9d8d-702d39330ee7" />
+<img width="1366" height="768" alt="Screenshot (257)" src="https://github.com/user-attachments/assets/2af8a011-9924-470d-8395-7bb96ed76985" />
+<img width="1366" height="768" alt="Screenshot (256)" src="https://github.com/user-attachments/assets/661dbb81-3da5-4920-b1fd-cb3e18c20f8a" />
+<img width="1366" height="768" alt="Screenshot (255)" src="https://github.com/user-attachments/assets/f5494794-337e-4c6f-af0d-c93c9e62cf55" />
+<img width="1366" height="768" alt="Screenshot (254)" src="https://github.com/user-attachments/assets/a4cbc401-311f-4eb4-bd0f-ea75a3034857" />
+<img width="1366" height="768" alt="Screenshot (252)" src="https://github.com/user-attachments/assets/08a7340d-88fe-463f-8f5a-e24aa080d1f7" />
 
