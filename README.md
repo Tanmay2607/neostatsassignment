@@ -1,4 +1,4 @@
-# 📊 NeoStats Excel Chat Assistant
+# 📊 Tanmay's Excel Sheet Analyzer
 
 A Streamlit-based conversational assistant that lets users upload Excel spreadsheets, ask natural language questions, and get instant answers as text, tables, or visual charts — all powered by Google's Gemini API.
 
@@ -6,28 +6,33 @@ A Streamlit-based conversational assistant that lets users upload Excel spreadsh
 
 ## 🚀 Features
 
-- 📁 Upload `.xlsx` Excel files (single sheet expected)
-- 🧠 Gemini LLM-powered analysis (Google Generative AI)
-- 🧾 Auto-infers data types and schema
-- ❓ Ask free-form natural language queries
-- 📊 Visualize insights using matplotlib (bar charts, line charts, histograms, etc.)
-- 🗂 Handles mixed datatypes, missing values, and inconsistent formatting
-- 🔒 No hardcoded column assumptions — works on any structured Excel
+- **Upload Excel files** (`.xlsx`)  
+- **Natural language queries**, like “count countries with total > 100”  
+- **Dynamic Python code generation**  GEMINI AI 
+- **Visual slides**: bar charts, histograms, etc., can display in Streamlit  
+- **Smart normalization**: case-insensitive and punctuation-agnostic matching  
+- **Safe execution**: handles DataFrame, Series, scalar outputs 
 
 ---
 
-## 🔧 Setup Instructions
+## 🛠️ Installation
 
-### 1. Clone the Repo, Install Dependencies & Add API Key
-
+ 1. Clone the repo:
+   ```bash
+   git clone https://github.com/Tanmay2607/neoat.git
+   cd neoat
+   ```
+ 2. Install dependencies:
+    ```bash
+    pip install -r requirements.txt
+    ```
+## ⚙️ Setup
+1. Sign up at GEMINI AI and obtain your API key.
+2. Add the key to Streamlit secrets:
+   In ~/.streamlit/secrets.toml (locally) or via the Streamlit Cloud UI:
+   ```
+   gemini_api_key = "YOUR_GEMINI_API_KEY"
+## ▶️ Run the App
 ```bash
-# Clone the repository
-git clone https://github.com/Tanmay2607/neostatsassignment.git
-cd neostatsassignment
-
-# Install dependencies
-pip install -r requirements.txt
-
-# Add your Gemini API key
-echo 'gemini_api_key = "YOUR_GEMINI_API_KEY"' > .streamlit/secrets.toml
-Get your key from GOOGLEAISTUDIO
+streamlit run app.py
+```
