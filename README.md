@@ -56,3 +56,8 @@ Displays result back in Streamlit
 <img width="1366" height="768" alt="Screenshot (254)" src="https://github.com/user-attachments/assets/a4cbc401-311f-4eb4-bd0f-ea75a3034857" />
 <img width="1366" height="768" alt="Screenshot (252)" src="https://github.com/user-attachments/assets/08a7340d-88fe-463f-8f5a-e24aa080d1f7" />
 
+## 🚧 Limitations
+1. Requires a valid GEMINI API key
+2. Best suited for Excel files with numeric and text-based columns
+3. Complex queries may need clear formulation
+4. LLM response time may vary depending on model/load
