@@ -116,12 +116,9 @@ if uploaded_file and api_key and query:
         with st.spinner("🤖 Thinking..."):
             response = call_llm_with_gemini(prompt, api_key)
             code = extract_python_code(response)
-
-        st.subheader("🧾 Generated Python Code")
-        st.code(code, language="python")
+            result = execute_generated_code(code, df)
 
         st.subheader("💡 Answer / Chart")
-        result = execute_generated_code(code, df)
         if isinstance(result, (pd.Series, pd.DataFrame)):
             st.write(result)
         elif result is not None:
