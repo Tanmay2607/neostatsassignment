@@ -19,7 +19,7 @@ A Streamlit-based conversational assistant that lets users upload Excel spreadsh
 
  1. Clone the repo:
    ```bash
-   git clone https://github.com/Tanmay2607/neoat.git
+   git clone https://github.com/Tanmay2607/neostatsassignment.git
    cd neoat
    ```
  2. Install dependencies:
